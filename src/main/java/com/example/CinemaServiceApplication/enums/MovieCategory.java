@@ -6,5 +6,6 @@ public enum MovieCategory {
     ACTION,
     DRAMA,
     HISTORY,
-    SCIENCE_FI
+    SCIENCE_FI,
+    ROMANCE,
 }

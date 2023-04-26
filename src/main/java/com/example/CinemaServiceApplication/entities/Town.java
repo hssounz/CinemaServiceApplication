@@ -10,6 +10,10 @@ import java.util.Collection;
 @Entity @Data @NoArgsConstructor @AllArgsConstructor
 public class Town {
 
+    public Town(String townName) {
+        this.townName = townName;
+    }
+
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String townName;

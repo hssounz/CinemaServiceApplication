@@ -1,5 +1,6 @@
 package com.example.CinemaServiceApplication.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,13 +15,13 @@ public class Hall {
     private Long id;
     private String hallName;
 
-    @ManyToOne
+    @ManyToOne @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Cinema cinema;
 
     private int placesNumber;
-    @OneToMany(mappedBy = "hall")
+    @OneToMany(mappedBy = "hall") @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Place> places;
 
-    @OneToMany(mappedBy = "hall")
+    @OneToMany(mappedBy = "hall") @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<MovieProjection> movieProjections;
 }

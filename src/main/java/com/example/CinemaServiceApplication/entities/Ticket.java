@@ -1,5 +1,6 @@
 package com.example.CinemaServiceApplication.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,8 +14,8 @@ public class Ticket {
     private String customer;
     private double price;
 
-    @Column(unique = true)
-    private int paymentCode;
+    @Column(unique = false, nullable = true)
+    private Integer paymentCode;
 
     private Boolean reserved;
 
